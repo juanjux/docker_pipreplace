@@ -9,8 +9,9 @@ While the usual proposed alternative to avoid that problem is to write all the `
 commands in the Dockerfile, this has the problem that you now have to maintain two lists if you
 want to keep the `requirements.txt` file for your project (*and you really want*).
 
-So this script just reads the `requirements.txt` file and a `Dockerfile.template` file and it 
-replaced the mark `### PIPREPLACE ###` with the list of pip install commands. So if you change
-anything in your dependencies only that dependency will be downloaded and or compiled. Of course
-this will generate a lot more caches but the build will be faster and you will avoid downloads,
-which is nice if you are on the go and connected though a limited data plan.
+So this script just reads the `requirements.txt` file and a `Dockerfile.template` file and it
+replaced the mark `### PIPREPLACE ###` with the list of pip install commands and then writes the
+final `Dockerfile`. So if you change anything in your dependencies only that dependency will be
+downloaded and or compiled. Of course this will generate a lot more caches but the build will be
+faster and you will avoid downloads, which is nice if you are on the go and connected though a
+limited data plan.
